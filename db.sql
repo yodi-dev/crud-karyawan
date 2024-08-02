@@ -101,6 +101,10 @@ CREATE TABLE IF NOT EXISTS `karyawans` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table crud-karyawan.karyawans: ~0 rows (approximately)
+INSERT INTO `karyawans` (`id`, `nama`, `pekerjaan_id`, `divisi`, `status`, `created_at`, `updated_at`) VALUES
+	(1, 'yodi', 1, 'web', 'aktif', '2024-08-01 10:39:59', '2024-08-01 10:39:59'),
+	(2, 'awan', 1, 'chatbot', 'aktif', '2024-08-01 15:46:36', '2024-08-01 15:46:36'),
+	(4, 'coba', 1, 'front', 'nonaktif', '2024-08-01 15:52:51', '2024-08-01 17:03:43');
 
 -- Dumping structure for table crud-karyawan.migrations
 CREATE TABLE IF NOT EXISTS `migrations` (
@@ -110,13 +114,14 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table crud-karyawan.migrations: ~0 rows (approximately)
+-- Dumping data for table crud-karyawan.migrations: ~5 rows (approximately)
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(4, '0001_01_01_000000_create_users_table', 1),
 	(5, '0001_01_01_000001_create_cache_table', 1),
 	(6, '0001_01_01_000002_create_jobs_table', 1),
 	(7, '2024_08_01_053456_create_pekerjaans_table', 1),
-	(8, '2024_08_01_063832_create_karyawans_table', 1);
+	(8, '2024_08_01_063832_create_karyawans_table', 1),
+	(9, '2024_08_01_171540_create_personal_access_tokens_table', 2);
 
 -- Dumping structure for table crud-karyawan.password_reset_tokens
 CREATE TABLE IF NOT EXISTS `password_reset_tokens` (
@@ -137,7 +142,9 @@ CREATE TABLE IF NOT EXISTS `pekerjaans` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table crud-karyawan.pekerjaans: ~0 rows (approximately)
+-- Dumping data for table crud-karyawan.pekerjaans: ~1 rows (approximately)
+INSERT INTO `pekerjaans` (`id`, `pekerjaan`, `created_at`, `updated_at`) VALUES
+	(1, 'fullstack', '2024-08-01 17:39:16', '2024-08-01 17:39:18');
 
 -- Dumping structure for table crud-karyawan.sessions
 CREATE TABLE IF NOT EXISTS `sessions` (
@@ -153,6 +160,9 @@ CREATE TABLE IF NOT EXISTS `sessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table crud-karyawan.sessions: ~0 rows (approximately)
+INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
+	('pjgIXcYaykdseYAADNCTwEbFgUUCJIuVaCh9ijTV', NULL, '127.0.0.1', 'PostmanRuntime/7.40.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiZjJqdUVCZEhLV0NmYVF3SDl6Y0dHcFNaQ1VKbldrR09MRWswYUJJQyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1722567515),
+	('vobjZMYCj6gkEUs2Yro7iXXTFG8SOcgIOTogkFL9', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiM25jUnZiSHp6M05YaGNHbnA0dWV1TVVkeDJFYUw1M0VxWnpnbWxkVCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1722567237);
 
 -- Dumping structure for table crud-karyawan.users
 CREATE TABLE IF NOT EXISTS `users` (
